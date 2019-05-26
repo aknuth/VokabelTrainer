@@ -17,3 +17,27 @@
   background-repeat: no-repeat;
   margin: 16px;
 }
+.enable{
+  opacity: 1;
+  cursor: pointer;
+}
+.disable{
+  opacity: .3;
+  cursor: initial;
+}
+
+:host ::ng-deep .ant-card-meta-description{
+  font-size: 24px;
+}
+:host ::ng-deep .ant-card-meta-title .finish{
+  color:green;
+}
+:host ::ng-deep .nztitle{
+  font-size: 28px;
+  overflow: hidden;
+  margin-bottom: 0px;
+  color: rgba(0,0,0,.85);
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;  
+}

@@ -3,9 +3,9 @@
     <div class="logo"></div>
     <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
       <li *ngFor="let file of files" nz-submenu>
-        <span title><i nz-icon type="user"></i><span class="nav-text"></span>{{file}}</span>
+        <span title (contextmenu)="onContextMenu($event, file?.filenameOnly)"><i nz-icon type="user"></i><span class="nav-text"></span>{{file.filenameOnly}}</span>
         <ul>
-          <li *ngFor="let lektion of mapOfFiles.get(file)" nz-menu-item>{{lektion}}</li>
+          <li *ngFor="let lektion of file?.lektionen" nz-menu-item (click)="startVokabelLernen(file,lektion)">{{lektion.name}}</li>
         </ul>
       </li>
       <!-- <li nz-submenu>
@@ -27,19 +27,39 @@
         class="trigger"
         nz-icon
         [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-        (click)="isCollapsed = !isCollapsed"
-      ></i>
+        (click)="isCollapsed = !isCollapsed"></i>
     </nz-header>
     <nz-content style="margin:0 16px;">
       <nz-breadcrumb style="margin:16px 0;">
-        <nz-breadcrumb-item>User</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+        <nz-breadcrumb-item>{{selectedFile?selectedFile.filenameOnly:''}}</nz-breadcrumb-item>
+        <nz-breadcrumb-item>{{selectedLektion?selectedLektion.name:''}}</nz-breadcrumb-item>
+        <nz-breadcrumb-item>{{lernen?lernen.anzahlVerbliebenerVokabeln:''}}</nz-breadcrumb-item>
       </nz-breadcrumb>
-      <div style="padding:24px; background: #fff; min-height: 360px;">
+      <div style="padding:24px; background: #fff; min-height: 360px;" >
+        <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="lernen?lernen.actions:[]">
+          <nz-card-meta
+            [nzTitle]="title"
+            [nzDescription]="lernen?lernen.translation:''"
+            [nzAvatar]="avatarTemplate"
+            [ngClass]="{'finish':true}">
+          </nz-card-meta>
+        </nz-card>
        {{text}}
       </div>
+      <ng-template #like>
+        <i nz-icon type="like" (click)="lernen.korrekt()" [ngClass]="{'enable':lernen.isTranslationShown(),'disable':!lernen.isTranslationShown()}"></i>
+      </ng-template>
+      <ng-template #dislike>
+        <i nz-icon type="dislike" (click)="lernen.falsch()" [ngClass]="{'enable':lernen.isTranslationShown(),'disable':!lernen.isTranslationShown()}"></i>
+      </ng-template>
+      <ng-template #eye>
+        <i nz-icon type="eye" (click)="lernen.show()" [ngClass]="{'enable':!lernen.isTranslationShown(),'disable':lernen.isTranslationShown()}"></i>
+      </ng-template>
+      <ng-template #title>
+        <p [ngClass]="{'nztitle':true,'finish':lernen?lernen.lektion.vokabeln.length===0:false}">{{lernen?lernen.original:''}}</p>
+      </ng-template>
     </nz-content>
-    <nz-footer style="text-align: center;">Ant Design ©2019 Implement By Angular</nz-footer>
+    <nz-footer style="text-align: center;">Vokabel Trainer by Andreas Knuth</nz-footer>
   </nz-layout>
 </nz-layout>
 <ng-template #trigger>

@@ -82,6 +82,7 @@
   },
   "dependencies": {
     "@angular/animations": "^7.2.11",
+    "mathjs": "^5.10.3",
     "ng-zorro-antd": "^7.2.0"
   }
 }

@@ -1,0 +1,77 @@
+de compras;beim Einkaufen
+la manzana;Apfel
+la naranja;Orange
+la cebolla;Zwwiebel
+el yogur;Joghurt
+el melocotón;Pfirsich
+el plátano;Banane
+la mantequilla;Butter
+el piemento;Paprika
+el ajo;Knoblauch
+el huevo;Ei
+la mermelada;Marmelade
+la lechuga;Kopfsalat
+la miel;Honig
+el azúcar;Zucker
+el salchichón;Dauerwurst
+el chorizo;Paprikawurst
+la mortadela;Morrtadella
+la fruta;Obst
+la verdura;Gemüse
+los embutidos;Wurstwaren
+los alimentos;Lebensmittel
+la nevera;Kühlschrank
+A quién le toca?;Wer ist an der Reihe?
+quién?;Wer?
+tocat;hier:an der Reihe sein
+Qué le pongo?;Was darf es sein?
+poner;geben, setzen, stellen, legen
+medio kilo (de);ein halbes Kilo
+medio/-a;halb
+Desea algo más?;Möchten Sie noch etwas?
+desear;wünschen
+el gramo;Gramm
+cortar;schneiden
+la loncha;(Käse/Wurst)Scheibe
+fino/-a;dünn
+Es todo?;Ist das alles?
+la barra de pan;Stangenbrot
+meter;(hinein-)legen, -stecken
+la bolsa;(einkaufs-)Tüte
+comprar;kaufen
+el arroz;Reis
+la caja (de);Schachtel
+la galleta;Keks
+el paquete (de);Paket, Packung
+la lata (de);Dose
+la docena (de);Dutzend
+verde;grün
+rojo/-a;rot
+azul;blau
+amarillo/-a;gelb
+marrón;braun
+gris;grau
+blanco/-a;weiß
+negro/-a;schwarz
+de lunares;gepunktet
+a rayas;gestreift
+a cuadros;kariert
+la lana;Wolle
+el algodßon;Baumwolle
+el cuero;Leder
+la seda;Seide
+llevar;tragen, anhaben
+la chaqueta;Jacke, Sakko
+los vaqueros;Jeans
+el pantalón/los pantalones;Hose
+la camisa;Hemd
+la minifalda;Minirock
+la blusa;Bluse
+el vestido;Kleid
+los zapatos;Schuhe
+el jersey;Pullover
+el traje;Anzug
+gris oscuro;dunkelgrau
+la corbata;Krawatte
+le encanta/n;sich begeistern von
+el banador;Badeanzug

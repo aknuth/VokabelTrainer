@@ -1,0 +1,70 @@
+pos la manana;vormittags, morgens
+por la tarde;nachmittags
+por la noche;abends, nachts
+antes de; vor
+después de;nach
+posible;möglich
+la información;Information
+elegir (e>i);auswählen
+el horario;Öffnungszeit, Stunden-/Fahrplan
+cerrar (e>ie);schließen
+estar abierto/-a;geöffnet sein
+estar cerrado/-a;geschlossen sein
+desde las ... hast las...;von ...Uhr bis ... Uhr
+de ... a;von ... bis
+interesante;interessant
+el horario de trabajo;Arbeitszeit
+bueno/-a;gut
+empezar (e>ie);beginnen
+terminar;(be)enden
+alungo/-a;(irgend)eine/r, einige, ein paar
+la cafetería;Cafeteria
+Qué poco tiempo ..!;Wie wenig Zeit ...!
+siempre;immer
+necesitar;brauchen, gebrauchen
+volver (o>ue);zurückkehren, zurückkommen
+sobre las ocho;gegen acht Uhr
+el/la chico/-a;Junge, Mädchen
+la jornada de trabajo;Arbeitstag
+el día;Tag
+normal;normal, gewöhnlich
+levantarse;aufstehen
+temprano;früh
+dormir (o>ue) una siesta;Mittagsschlaf machen
+el periódico;Zeitung
+salir (salgo);aus-/weggehen
+la cena;Abendessen
+acostarse (o>ue);ins Bett gehen
+tarde;spät
+el panadero;Bäcker
+el empleado de gasolinera;Tankwart
+el taxista;Taxifahrer
+con qué frecuencia?;wie oft?
+la frecuencia;Häufigkeit, Freuquenz
+la actividad;Tätigkeit
+la costumbre;Gewohnheit
+todos los días;jeden Tag
+2 ó 3 veces por semana;2 oder 3 mal pro Woche
+a veces;manchmal
+nunca;nie, niemals
+Qué día!;Was für ein Tag!
+a mediodía;mittags
+el curso de informática;Informatikkurs
+la reunión;Treffen, Zusammenkunft
+los padres;Eltern
+el correo electrónico;Email
+desde Londres;aus London
+Querido/-a ...;Liebe/-r ...(Briefanfang)
+el saludo;Gruß
+aprender;lernen
+ir a clase;zum Unterricht gehen
+la clase;Unterricht
+pero;aber
+la dificultad;Schwierigkeit
+Imagínate que cenemos...;Stell dir vor, wir essen ...
+reunirse;sich treffen, versammeln
+el "pub";Pub
+divertirse;sich unterhalten, amüsieren
+Esto no es Espana!;Das ist nicht Spanien!
+mucho más tremprano;sehr viel früher
+Un abrazo;Sei umarmt, gedrückt (Briefschluss)
