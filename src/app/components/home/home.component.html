@@ -36,11 +36,11 @@
         <nz-breadcrumb-item>{{lernen?lernen.anzahlVerbliebenerVokabeln:''}}</nz-breadcrumb-item>
       </nz-breadcrumb>
       <div style="padding:24px; background: #fff; min-height: 360px;" >
-        <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="lernen?lernen.actions:[]">
+        <nz-card style="width:300px;" [nzActions]="lernen?lernen.actions:[]">
           <nz-card-meta
             [nzTitle]="title"
             [nzDescription]="lernen?lernen.translation:''"
-            [nzAvatar]="avatarTemplate"
+            
             [ngClass]="{'finish':true}">
           </nz-card-meta>
         </nz-card>
