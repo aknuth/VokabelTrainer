@@ -25,6 +25,11 @@ export class HomeComponent implements OnInit {
   selectedLektion: Lektion;
   selectedFile: VokabelFile;
   menu:any;
+  anzahlumlaeufe:number=2;
+  anzahlvokabeln:number=10;
+
+  isVisibleTop = false;
+  isVisibleMiddle = false;
   //mapOfFiles:Map<string,Array<string>>=new Map();
   //lektionen:Array<string>=[];
 
@@ -49,7 +54,7 @@ export class HomeComponent implements OnInit {
   onChosenFileToOpen(theFileEntry) {
     this.zone.run(()=>{
       console.log(theFileEntry);
-      this.files.push(new VokabelFile(theFileEntry)); 
+      this.files.push(new VokabelFile(theFileEntry,this.anzahlvokabeln)); 
       let filesString = JSON.stringify(this.files);
       localStorage.setItem('files',filesString);
     })
@@ -62,6 +67,12 @@ export class HomeComponent implements OnInit {
       if (filesString){
         this.files=JSON.parse(filesString);
       }
+      let config = localStorage.getItem('config');
+      if (config){
+        let parsedConfig = JSON.parse(config);
+        this.anzahlumlaeufe=parsedConfig.au;
+        this.anzahlvokabeln=parsedConfig.av;
+      }
     })
 
   }
@@ -69,7 +80,7 @@ export class HomeComponent implements OnInit {
     this.zone.run(()=>{
       this.selectedLektion=lektion;
       this.selectedFile=file;
-      this.lernen=new Lernen(lektion,[this.eye, this.like, this.dislike]);
+      this.lernen=new Lernen(lektion,[this.eye, this.like, this.dislike],this.anzahlumlaeufe);
     })
   }
   onContextMenu($event, item){
@@ -85,5 +96,21 @@ export class HomeComponent implements OnInit {
       }
     }));
     menu.popup();
+  }
+  showModalMiddle(): void {
+    this.isVisibleMiddle = true;
+  }
+  handleOkMiddle(): void {
+    let tmpFiles = [];
+    this.files.forEach(f=>{
+      tmpFiles.push(new VokabelFile(f.pathname,this.anzahlvokabeln));
+    })
+    this.files=tmpFiles;
+    localStorage.setItem('config',JSON.stringify({au:this.anzahlumlaeufe,av:this.anzahlvokabeln}));
+    this.isVisibleMiddle = false;
+  }
+
+  handleCancelMiddle(): void {
+    this.isVisibleMiddle = false;
   }
 }

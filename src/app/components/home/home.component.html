@@ -1,22 +1,19 @@
 <nz-layout>
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
-    <div class="logo"></div>
+    <div class="logo">
+    </div>
     <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item>
+            <span><i nz-icon type="setting"></i><span class="nav-text" (click)=showModalMiddle()>Konfiguration</span></span>
+      </li>        
+      <li nz-menu-item>
+        <span><i nz-icon type="file"></i><span class="nav-text" (click)=handleOpenButton()>File</span></span>
+      </li>     
       <li *ngFor="let file of files" nz-submenu>
         <span title (contextmenu)="onContextMenu($event, file?.filenameOnly)"><i nz-icon type="user"></i><span class="nav-text"></span>{{file.filenameOnly}}</span>
         <ul>
           <li *ngFor="let lektion of file?.lektionen" nz-menu-item (click)="startVokabelLernen(file,lektion)">{{lektion.name}}</li>
         </ul>
-      </li>
-      <!-- <li nz-submenu>
-        <span title><i nz-icon type="team"></i><span class="nav-text">Team</span></span>
-        <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
-        </ul>
-      </li> -->
-      <li nz-menu-item>
-        <span><i nz-icon type="file"></i><span class="nav-text" (click)=handleOpenButton()>File</span></span>
       </li>
     </ul>
   </nz-sider>
@@ -30,22 +27,22 @@
         (click)="isCollapsed = !isCollapsed"></i>
     </nz-header>
     <nz-content style="margin:0 16px;">
-      <nz-breadcrumb style="margin:16px 0;">
+      <nz-breadcrumb>
         <nz-breadcrumb-item>{{selectedFile?selectedFile.filenameOnly:''}}</nz-breadcrumb-item>
         <nz-breadcrumb-item>{{selectedLektion?selectedLektion.name:''}}</nz-breadcrumb-item>
         <nz-breadcrumb-item>{{lernen?lernen.anzahlVerbliebenerVokabeln:''}}</nz-breadcrumb-item>
       </nz-breadcrumb>
       <div style="padding:24px; background: #fff; min-height: 360px;" >
-        <nz-card style="width:300px;" [nzCover]="coverTemplate" [nzActions]="lernen?lernen.actions:[]">
+        <nz-card [nzActions]="lernen?lernen.actions:[]">
           <nz-card-meta
             [nzTitle]="title"
             [nzDescription]="lernen?lernen.translation:''"
-            [nzAvatar]="avatarTemplate"
             [ngClass]="{'finish':true}">
           </nz-card-meta>
         </nz-card>
        {{text}}
       </div>
+      
       <ng-template #like>
         <i nz-icon type="like" (click)="lernen.korrekt()" [ngClass]="{'enable':lernen.isTranslationShown(),'disable':!lernen.isTranslationShown()}"></i>
       </ng-template>
@@ -65,3 +62,15 @@
 <ng-template #trigger>
   <i nz-icon type="up"></i>
 </ng-template>
+<nz-modal
+      nzWrapClassName="vertical-center-modal"
+      [(nzVisible)]="isVisibleMiddle"
+      nzTitle="Konfiguration"
+      (nzOnCancel)="handleCancelMiddle()"
+      (nzOnOk)="handleOkMiddle()">
+      <nz-divider nzText="Anzahl Durchläufe"></nz-divider>
+      <nz-input-number style="min-width: 100%;" [(ngModel)]="anzahlumlaeufe"  [nzMin]="1" [nzMax]="5" [nzStep]="1"></nz-input-number>
+      <nz-divider nzText="Anzahl Vokabeln / Lektion"></nz-divider>
+      <nz-input-number style="min-width: 100%;" [(ngModel)]="anzahlvokabeln"  [nzMin]="5" [nzMax]="100" [nzStep]="5"></nz-input-number>
+
+</nz-modal>

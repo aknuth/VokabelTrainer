@@ -1,6 +1,6 @@
 {
-  "name": "angular-electron",
-  "version": "5.1.0",
+  "name": "VokabelTrainer",
+  "version": "0.1.0",
   "description": "Angular 7 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {

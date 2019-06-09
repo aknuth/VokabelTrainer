@@ -7,9 +7,11 @@ import * as math from 'mathjs'
 
 export class Lernen{
     lektion:Lektion=new Lektion('aktuell');
-    constructor(private lkt:Lektion,refs:Array<TemplateRef<any>>){
+    constructor(private lkt:Lektion,refs:Array<TemplateRef<any>>,private anzahlumlaeufe:number){
         this.actions=refs;
-        lkt.vokabeln.forEach(v=>this.lektion.vokabeln.push(v));
+        for (let i=0;i<anzahlumlaeufe;i++){
+            lkt.vokabeln.forEach(v=>this.lektion.vokabeln.push(v));
+        }
         this.anzahlVerbliebenerVokabeln=lkt.vokabeln.length;
         this.next();
     }

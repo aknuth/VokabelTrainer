@@ -10,13 +10,13 @@
   color: #1890ff;
 }
 
-.logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  background-image: url('../../../assets/excel.svg');
-  background-repeat: no-repeat;
-  margin: 16px;
-}
+// .logo {
+//   height: 32px;
+//   background: rgba(255, 255, 255, 0.2);
+//   background-image: url('../../../assets/excel.svg');
+//   background-repeat: no-repeat;
+//   margin: 16px;
+//}
 .enable{
   opacity: 1;
   cursor: pointer;
@@ -40,4 +40,15 @@
   font-weight: 500;
   white-space: nowrap;
   text-overflow: ellipsis;  
+}
+:host ::ng-deep nz-layout{
+  height: 100vh;
+}
+nz-content{
+  background: #fff;
+}
+nz-breadcrumb{
+  padding: 16px;
+  margin:0px;
+  background: #f0f2f5;
 }

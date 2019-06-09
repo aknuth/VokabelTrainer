@@ -13,10 +13,13 @@ function createWindow() {
 
   // Create the browser window.
   win = new BrowserWindow({
-    x: 0,
-    y: 0,
-    width: size.width,
-    height: size.height,
+    // x: 0,
+    // y: 0,
+    width: 640,//size.width,
+    height: 565,//size.height,
+    title: "VokabelTrainer",
+    icon: __dirname+'/assets/AppIcon.icns',
+    //icon: __dirname + ‘/Icon/Icon.icns’,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -36,7 +39,7 @@ function createWindow() {
   }
 
   if (serve) {
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
   }
 
   // Emitted when the window is closed.
