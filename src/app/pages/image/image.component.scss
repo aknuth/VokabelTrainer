@@ -1,0 +1,75 @@
+.cropping {
+    background-color: #333;
+}
+img {
+    // display: block;
+  
+    /* This rule is very important, please don't ignore this */
+    max-width: 100%;
+    max-height: calc(100vh - var(--height-steps));
+  }
+  .toolbar {
+    background-color: rgba(0,0,0,.5);
+    bottom: 2rem;
+    color: #fff;
+    height: 2rem;
+    left: 50%;
+    position: absolute;
+    width: 8rem;
+    z-index: 2015;
+}
+.toolbar__button {
+    background-color: transparent;
+    border-width: 0;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: .875rem;
+    height: 2rem;
+    text-align: center;
+    width: 2rem;
+}
+.toolbar__button:hover {
+    background-color: #0074d9;
+    color: #fff;
+}
+.thumbnail-container{
+    display: flex;
+    & img {
+        margin-right: 5px;
+    }
+}
+.steps-content {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 200px;
+    text-align: center;
+    padding-top: 80px;
+}
+nz-steps {
+    display: block;
+    box-shadow: rgb(232, 232, 232) 0px -1px 0px 0 inset;
+  }
+::ng-deep div.ant-steps{
+    padding:20px
+}
+::ng-deep div.ant-progress-line{
+    padding: 0 20px;
+}
+.recognition{
+    height: calc(100vh - var(--height-steps));
+    .canvasContainer{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        canvas{
+            height:40vh;
+            margin: auto;
+        }
+    }
+}

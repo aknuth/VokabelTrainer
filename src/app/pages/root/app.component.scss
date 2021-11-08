@@ -1,0 +1,35 @@
+:host {
+  
+    .logo {
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px;
+      }
+
+      .layout {
+        min-height: 100vh;
+      }
+
+      nz-sider {
+        overflow: auto;
+        height: 100%;
+        position: fixed;
+        left: 0;
+      }
+
+      nz-header {
+        background: #fff;
+        padding: 0;
+      }
+
+      .inner-content {
+        height: 100%;
+        // padding: 24px;
+        background: #fff;
+        text-align: center;
+      }
+
+      nz-footer {
+        text-align: center;
+      }
+}

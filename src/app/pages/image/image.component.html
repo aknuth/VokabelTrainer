@@ -1,0 +1,31 @@
+<nz-steps [nzCurrent]="index" nzType="navigation" (nzIndexChange)="onIndexChange($event)">
+    <nz-step nzTitle="Cropping"></nz-step>
+    <nz-step nzTitle="Analysing"></nz-step>
+    <nz-step nzTitle="Listing"></nz-step>
+</nz-steps>
+<div class="cropping" *ngIf="index===0">
+    <angular-cropper #angularCropper [cropperOptions]="{ checkCrossOrigin: true }" imageUrl="assets/imgs/IMG_3507.jpg">
+    </angular-cropper>
+    <div class="toolbar">
+        <button title="Move (M)" class="toolbar__button">
+            <fa-icon [icon]="['fas', 'arrows-alt']"></fa-icon>
+        </button>
+        <button title="Crop (C)" class="toolbar__button" (click)="crop()">
+            <fa-icon [icon]="['fas', 'crop']"></fa-icon>
+        </button>
+        <button title="Rotate Right" class="toolbar__button">
+            <fa-icon [icon]="['fas', 'redo']"></fa-icon>
+        </button>
+        <button title="Rotate Left" class="toolbar__button" (click)="rotateLeft()">
+            <fa-icon [icon]="['fas', 'undo']"></fa-icon>
+        </button>
+    </div>
+</div>
+<div class="recognition" *ngIf="index===1">
+    <nz-progress nzStrokeLinecap="round" [nzPercent]="progress"></nz-progress>
+    <div #canvasContainer class="canvasContainer ion-text-center">
+        <canvas #canvas id="c"></canvas>
+        <button nz-button nzType="primary" nzShape="round" (click)="analyse()">Analysieren</button>
+    </div>
+
+</div>
