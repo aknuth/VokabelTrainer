@@ -6,12 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { NzFooterComponent, NzHeaderComponent, NzLayoutModule, NzSiderComponent } from 'ng-zorro-antd/layout';
 // NG Translate
 import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
-registerLocaleData(en);
 /** config ng-zorro-antd i18n **/
 import { NZ_I18N, de_DE } from 'ng-zorro-antd/i18n';
 import { AppComponent } from './pages/root/app.component';
-
+import { createLogger } from 'browser-bunyan';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzImageModule } from 'ng-zorro-antd/image';
@@ -24,6 +22,20 @@ import { ImageComponent } from './pages/image/image.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { setLicenseKey } from '@grapecity/wijmo';
+import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
+import de from '@angular/common/locales/en';
+import { AngularSplitModule } from 'angular-split';
+import keys from '../assets/data/keys.json';
+registerLocaleData(de);
+
+const logger = createLogger({name: 'vocabtrainer'});
+
+logger.info('--> '+location.hostname);
+let hostname = location.hostname;
+let licenceKey = keys.wijmo;
+logger.info(licenceKey.substr(0,300)+'...');
+setLicenseKey(licenceKey);
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, ImageComponent,  CropperComponent],
@@ -38,7 +50,9 @@ import { NzProgressModule } from 'ng-zorro-antd/progress';
     FontAwesomeModule,
     NzImageModule,
     NzStepsModule,
-    NzProgressModule
+    NzProgressModule,
+    WjGridModule,
+    AngularSplitModule,
   ],
   providers: [{provide: NZ_I18N, useValue: de_DE}],
   bootstrap: [AppComponent]

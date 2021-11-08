@@ -15,7 +15,7 @@ img {
     height: 2rem;
     left: 50%;
     position: absolute;
-    width: 8rem;
+    width: 4rem;
     z-index: 2015;
 }
 .toolbar__button {
@@ -68,8 +68,7 @@ nz-steps {
         justify-content: center;
         align-items: center;
         canvas{
-            height:40vh;
-            margin: auto;
+            width: 90%;
         }
     }
 }

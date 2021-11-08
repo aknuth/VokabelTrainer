@@ -35,9 +35,12 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/@grapecity/wijmo.styles/wijmo.css",
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/@grapecity/wijmo.cultures/wijmo.culture.de.js"
+            ],
             "customWebpackConfig": {
               "path": "./angular.webpack.js"
             }
