@@ -17,7 +17,6 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { CropperComponent } from './components/cropper/cropper.component';
 import { ImageComponent } from './pages/image/image.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
@@ -27,6 +26,7 @@ import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import de from '@angular/common/locales/en';
 import { AngularSplitModule } from 'angular-split';
 import keys from '../assets/data/keys.json';
+import { ImageCropperModule } from 'ngx-image-cropper';
 registerLocaleData(de);
 
 const logger = createLogger({name: 'vocabtrainer'});
@@ -38,7 +38,7 @@ logger.info(licenceKey.substr(0,300)+'...');
 setLicenseKey(licenceKey);
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, ImageComponent,  CropperComponent],
+  declarations: [AppComponent, PageNotFoundComponent, ImageComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -53,6 +53,7 @@ setLicenseKey(licenceKey);
     NzProgressModule,
     WjGridModule,
     AngularSplitModule,
+    ImageCropperModule
   ],
   providers: [{provide: NZ_I18N, useValue: de_DE}],
   bootstrap: [AppComponent]
